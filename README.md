@@ -1,7 +1,8 @@
-Sari-sartel: a mobile and accessories shop.
+# Sari-sartel 
+a mobile and accessories shop website and pwa
 
-#Frontend
+# Frontend
 Frontend made using Next js
 
-#Backend
+# Backend
 Backend is currently on django rest framework but soon will be on node js
