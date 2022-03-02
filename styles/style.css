@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: roboto;
+    src: url('../public/Fonts/RobotoCondensed-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: robotoBold;
+    src: url('../public/Fonts/RobotoCondensed-Bold.ttf');
+  }
+  
+  body {
+    font-family: roboto;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  .header {
+    padding: 20px 10%;
+  }
+
+  
+
+  .upper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .login-search {
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  input:focus, button:focus, select:focus {
+      outline: none;
+  }
+
+  .login-search input {
+      border-radius: 10px;
+      border: 0.5px solid black;
+      font-family: roboto;
+      padding-left: 10px;
+      width: 30vw;
+      margin-left: 20px;
+  }
+
+  .upper-header button {
+      width: 100px;
+      height: 40px;
+      font-family: roboto;
+      background-color: white;
+      border-radius: 10px;
+      color: #2e2b70;
+      border: 0.5px solid #2e2b70;
+      transition: 0.5s;
+  }
+
+  .upper-header button:hover {
+      color: white;
+      background-color: #2e2b70;
+  }
+
+  .header-logo img {
+      width: 60px;
+      height: 60px;
+  }
+
+  .header-logo {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 20px;
+  }
+
+  #burger-menu {
+      width: 40px;
+      height: 40px;
+      display: none;
+  }
+
+  a {
+      color: white;
+      text-decoration: none;
+  }
+
+  .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .about {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      grid-gap: 10vw;
+      align-items: center;
+  }
+
+  .main-title {
+      text-align: center;
+      margin-top: 50px;
+  }
+
+  .products-section {
+      background-color: #2e2b70;
+      margin-top: 50px;
+      padding: 30px;
+  }
+
+  .home-page {
+      display: none;
+  }
+
+  .home-page .item {
+      background-color: white;
+      color: #2e2b70;
+  }
+
+  .home-page .main-title {
+      color: white ;
+  }
+
+  .about-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #logo {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+  }
+
+  h1 {
+      font-family: robotoBold;
+  }
+
+
+  .about-image img {
+      width: 40vw;
+  }
+
+  .about-description {
+      text-align: center;
+  }
+
+  .location {
+      margin-top: 100px;
+  }
+
+  .location img {
+      width: 30px;
+      margin-bottom: 8px;
+  }
+
+  .down-header {
+      margin: 20px 10%;
+      border-radius:  0 0 20px 20px;
+      background-color: #2e2b70;
+      color: white;
+      display: grid;
+      grid-template-columns: 10vw 10vw 10vw 10vw 10vw;
+      justify-content: center;
+  }
+
+  .header-item {
+    padding:  20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+
+  .header-item:hover {
+      background-color: #3d47b8;
+  }
+
+  .items-list {
+      display: grid;
+      grid-template-columns: 20vw 20vw 20vw 20vw;
+      grid-gap: 30px;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+  }
+
+  .item {
+      padding: 5px;
+      height: 500px;
+      text-align: center;
+      background-color: #2e2b70;
+      color: white;
+  }
+
+  .start-page {
+      height: 100vh;
+      flex-direction: column;
+  }
+
+  #item-image {
+      width: 100%;
+      height: 300px;
+  } 
+
+ 
+
+  .item select, select {
+      font-family: roboto;
+      width: 60%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 0.5px solid black;
+      margin-bottom: 10px;
+  }
+
+.order-by select{
+    width: 300px;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .price {
+      color: white;
+  }
+
+ .home-page .price {
+     color: #2e2b70;
+ }
+
+ #telephone {
+     margin-left: 10px;
+     width: 27px;
+ }
+
+ .footer {
+     background-color: #2e2b70;
+     height: 100%;
+     padding-top: 100px;
+ }
+
+ .footer a,.about-description a {
+     color: black;
+ }
+
+ .footer .location {
+     margin-top: 0;
+     padding: 50px;
+ }
+
+ .footer-container {
+     background-color: white;
+     border-radius: 20px 20px 0 0;
+     text-align: center;
+     margin: 0 20%;
+ }
+
+ .overlay {
+    background: white;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 0;
+    z-index: 101;
+    overflow-y: hidden;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 41px;
+    width: 100%;
+    text-align: right;
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    z-index: 1;
+    width: 50px;
+    
+  }
+  
+  .closebtn:hover {
+    border-right: none !important;
+  }
+
+  .overlay::-webkit-scrollbar {
+    display: none;
+  }
+
+  .overlay a:hover, .overlay a:focus ,.home-page .home-tag,.Phones-page  .Phones-tag,.Tablets-page .Tablets-tag,.Accessories-page .Accessories-tag,.Speakers-page .Speakers-tag,
+  .watches .watches-tag{
+    color: #3d47b8;
+    border-right: solid 3px #2e2b70;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2e2b70;
+    display: block;
+    transition: 0.3s;
+  }
+
+  @media only screen and (max-width: 950px) {
+    .items-list {
+        grid-template-columns: 25vw 25vw 25vw;
+    }
+
+    .about {
+        grid-template-columns: auto;
+    }
+
+    .about-image {
+        grid-row: 1;
+    }
+
+    #burger-menu {
+        display: block;
+    }
+
+    .down-header {
+        display: none;
+    }
+
+    .upper-header button {
+        width: 50px;
+    }
+
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .items-list {
+        grid-template-columns: 40vw 40vw;
+    }
+
+    .footer-container {
+        margin: 0 10%;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .items-list {
+        grid-template-columns: 80vw;
+    }
+
+    .header input {
+        margin-left: 5px;
+    }
+
+}
