@@ -1,15 +1,48 @@
-import ItemList from "./ItemList";
+import Image from "next/image"
 import Link from "next/dist/client/link";
+import { useEffect } from "react";
 
-const ProductSection = ({ name }) => {
+const ProductSection = () => {
+
+    useEffect(() => {
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+          
+            for (var i = 0; i < reveals.length; i++) {
+              var windowHeight = window.innerHeight;
+              var elementTop = reveals[i].getBoundingClientRect().top;
+              var elementVisible = 150;
+          
+              if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+              } else {
+                reveals[i].classList.remove("active");
+              }
+            }
+          }
+          
+          window.addEventListener("scroll", reveal);
+    },[])
     return ( 
-        <div className="product-section reveal">
-             <div className="main-title">
-           <Link href={`/products/${name}`}><a>
-               <h2>{name}</h2>
-               </a></Link>
-       </div>
-       <ItemList />
+        <div className="product-section">
+            <div className="reveal">
+              <div className="about-product">
+                  <h2>تلفن همراه</h2>
+                  <Image src="/Images/PDP-O1-Pink-lockup-01-1600x1200.webp" alt="mobile phones" width={400} height={400}/>
+                </div>
+                <div className="about-product">
+                  <h2>تبلت</h2>
+                  <Image src="/Images/112-1121666_broken-tablets-by-apple-google-and-samsung-needing-removebg-preview (1).jpg" alt="tablets" width={400} height={400}/>
+                </div>
+                <div className="about-product">
+                  <h2>ساعت هوشمند</h2>
+                  <Image src="/Images/193-1939793_most-popular-smartwatches-samsung-galaxy-watch-hd-png.jpg" alt="smart watches" width={530} height={400}/>
+                </div>
+                <div className="about-product">
+                  <h2>لوازم جانبی</h2>
+                  <Image src="/Images/117136-images-airpods-png-file-hd.png" alt="accessories" width={400} height={400}/>
+                </div>
+            </div>
         </div>
      );
 }

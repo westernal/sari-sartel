@@ -1,15 +1,21 @@
+import Link from "next/link";
+import Image from "next/dist/client/image";
+
 const ItemList = () => {
+    const items = ["", "", "", ""]
     return ( 
         <div className="items-list reveal" >
-        <div className="item">
+        {items.map((item, index) => (
+            <Link href={`/products/[id]`} as={`/products/1`} key={index}><a>
+                 <div className="item">
             <div className="item-img">
-            <img src="/Images/61l9ppRIiqL._SL1500_.jpg" alt="iphone 13" id="item-image" />
+            <Image src="/Images/61l9ppRIiqL._SL1500_.jpg" alt="iphone 13" id="item-image" width={400} height={400} />
             </div>
             <h2>iphone 13</h2>
             <div className="item-color">
             <select name="color" id="color-select">
-                <option value="black">Black</option>
-                <option value="white">White</option>
+                <option value="black">سیاه</option>
+                <option value="white">سفید</option>
             </select>
             </div>
             <div className="item-capacity">
@@ -18,66 +24,11 @@ const ItemList = () => {
                 <option value="128">128 GB</option>
             </select>
             </div>
-            <div className="price">32,000,000 TOMAN</div>
+            <div className="price">32,000,000 تومان</div>
         </div>
+            </a></Link>
+        ))}
 
-        <div className="item">
-            <div className="item-img">
-            <img src="/Images/61l9ppRIiqL._SL1500_.jpg" alt="iphone 13" id="item-image" />
-            </div>
-            <h2>iphone 13</h2>
-            <div className="item-color">
-            <select name="color" id="color-select">
-                <option value="black">Black</option>
-                <option value="white">White</option>
-            </select>
-            </div>
-            <div className="item-capacity">
-            <select name="capacity" id="capacity-select">
-                <option value="64">64 GB</option>
-                <option value="128">128 GB</option>
-            </select>
-            </div>
-            <div className="price">32,000,000 TOMAN</div>
-        </div>
-        <div className="item">
-            <div className="item-img">
-            <img src="/Images/61l9ppRIiqL._SL1500_.jpg" alt="iphone 13" id="item-image" />
-            </div>
-            <h2>iphone 13</h2>
-            <div className="item-color">
-            <select name="color" id="color-select">
-                <option value="black">Black</option>
-                <option value="white">White</option>
-            </select>
-            </div>
-            <div className="item-capacity">
-            <select name="capacity" id="capacity-select">
-                <option value="64">64 GB</option>
-                <option value="128">128 GB</option>
-            </select>
-            </div>
-            <div className="price">32,000,000 TOMAN</div>
-        </div>
-        <div className="item">
-            <div className="item-img">
-            <img src="/Images/61l9ppRIiqL._SL1500_.jpg" alt="iphone 13" id="item-image" />
-            </div>
-            <h2>iphone 13</h2>
-            <div className="item-color">
-            <select name="color" id="color-select">
-                <option value="black">Black</option>
-                <option value="white">White</option>
-            </select>
-            </div>
-            <div className="item-capacity">
-            <select name="capacity" id="capacity-select">
-                <option value="64">64 GB</option>
-                <option value="128">128 GB</option>
-            </select>
-            </div>
-            <div className="price">32,000,000 TOMAN</div>
-        </div>
     </div>
      );
 }

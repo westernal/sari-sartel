@@ -10,25 +10,27 @@ const BurgerMenu = ({items = []}) => {
       }
       
     return ( 
-        <div className="burger-menu">
+        
               <div id="myNav" className="overlay">
         <a href="#" className="closebtn" onClick={closenav} >&times;</a>
         <div className="overlay-content">
-        <Link href="/"><a id="home-tag"> Home
+        <Link href="/"><a id="home-tag"> خانه
+        </a>  
+         </Link>
+         <Link href="/about"><a id="about-tag"> درباره ما
         </a>  
          </Link>
          {items.map((item, index) => (
-              <Link href={`/products/${item}`}><a className={`${item}-tag`} key={index} onClick={closenav}> 
+              <Link href={`/products`} key={index}><a className={`${item}-tag`}  onClick={closenav}> 
               {item}
               </a>  
                </Link>
          ))}
         
-          {!isLoggedIn && <Link href="/profile/sign-in"><a > Login </a></Link> }
-            {isLoggedIn && <a  href="#" onClick={logOut}> Logout </a>}
+          
         </div>
       </div>
-        </div>
+        
      );
 }
  

@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ItemList from "../../components/ItemList";
 
-const products = () => {
+const Products = () => {
 
     const route = useRouter();
 
@@ -13,25 +13,26 @@ const products = () => {
             return new Promise(resolve => setTimeout(resolve, ms));
           }
 
-        async function pageAnimation(params) {
+        async function pageAnimation() {
             const reveal = document.getElementsByClassName("reveal")[0]
+            reveal.classList.remove("active");
             await sleep(500)
             reveal.classList.add("active");
         }  
 
         pageAnimation()
-    },[])
+    },[route.query.name])
 
     return ( 
-        <div className={`products-page ${route.query.name}-page`}>
+        <div className={`products-page`}>
             <Header />
             <div className="main-title">
-                <h1>{route.query.name}</h1>
+                <h1>محصولات</h1>
                 <div className="order-by">
                     <select name="order" id="order-select">
-                    <option value="new">Newest</option>
-                    <option value="highest price">Highest price</option>
-                    <option value="lowest price"> Lowest price </option>
+                    <option value="new">جدیدترین</option>
+                    <option value="highest price">بالاترین قیمت </option>
+                    <option value="lowest price"> پایین ترین قیمت  </option>
                     </select>
                 </div>
             </div>
@@ -42,4 +43,4 @@ const products = () => {
      );
 }
  
-export default products;
+export default Products;
