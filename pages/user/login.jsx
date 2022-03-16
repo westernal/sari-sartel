@@ -1,41 +1,58 @@
-import Link from "next/link"
+import Link from "next/link";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin } from "react-google-login";
 import Image from "next/dist/client/image";
+import Head from "next/head";
 
 const Login = () => {
+  function googleSucceeded(res) {}
 
-    function googleSucceeded(res) {
-        
-    }
-
-   
-
-    return ( 
-        <>
-        <Header />
-        <div className="login-page flex">
-            <div className="login-form">
-                <div className="flex slogo"><Image src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg" alt="logo" width={70} height={70} /></div>
-                <form action="#">
-                    <input type="text" placeholder="ایمیل" />
-                    <input type="password" placeholder="رمز عبور" />
-                    <div className="flex"><input type="submit" value="ورود" id="submit-btn"/></div>
-                </form>
-                <div className="flex"><p>یا</p></div>
-                <div className="flex g-btn"><GoogleLogin
-                    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-                    buttonText="ورود با گوگل"
-                    onSuccess={googleSucceeded}
-                    cookiePolicy={'single_host_origin'}
-                /></div>
-                <div className="flex"><p>اکانت ندارید؟ </p><Link href="/user/signup"><a>ثبت نام</a></Link>  </div>
+  return (
+    <>
+      <Head>
+        <title>ورود - ساری سارتل</title>
+      </Head>
+      <Header />
+      <div className="login-page flex">
+        <div className="login-form">
+          <div className="flex slogo">
+            <Image
+              src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
+              alt="logo"
+              width={100}
+              height={70}
+            />
+          </div>
+          <form action="#">
+            <input type="text" placeholder="ایمیل" />
+            <input type="password" placeholder="رمز عبور" />
+            <div className="flex">
+              <input type="submit" value="ورود" id="submit-btn" />
             </div>
+          </form>
+          <div className="flex">
+            <p>یا</p>
+          </div>
+          <div className="flex g-btn">
+            <GoogleLogin
+              clientId="155548980934-3ufu90sfd6rm1v4mcjogcseproqp9upn.apps.googleusercontent.com"
+              buttonText="ورود با گوگل"
+              onSuccess={googleSucceeded}
+              cookiePolicy={"single_host_origin"}
+            />
+          </div>
+          <div className="flex">
+            <p>اکانت ندارید؟ </p>
+            <Link href="/user/signup">
+              <a aria-label="sign up">ثبت نام</a>
+            </Link>{" "}
+          </div>
         </div>
-        <Footer />
-        </>
-     );
-}
- 
+      </div>
+      <Footer />
+    </>
+  );
+};
+
 export default Login;

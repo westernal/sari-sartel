@@ -1,25 +1,26 @@
 const { createServer } = require('http')
+const { join } = require('path')
+const { parse } = require('url')
 const next = require('next')
- 
-const isDevMode = process.env.NODE_ENV !== 'production'
+
+const app = next({ dev: process.env.NODE_ENV !== 'production' })
+const handle = app.getRequestHandler()
 const port = process.env.PORT ? process.env.PORT : 3000
- 
-const nextjsApp = next({ dev: isDevMode })
-const nextjsRequestHandler = nextjsApp.getRequestHandler()
- 
-nextjsApp
-  .prepare()
+
+app.prepare()
   .then(() => {
     createServer((req, res) => {
-      // The request url likely will not include a protocol or host, therefore
-      // resolve the request url against a dummy base url.
-      const url = new URL(req.url, "http://w.w")
-      nextjsRequestHandler(req, res, url)
-    }).listen(port, (err) => {
-      if (err) throw err
+      const parsedUrl = parse(req.url, true)
+      const { pathname } = parsedUrl
+      
+      if (pathname === '/sw.js' || /^\/(workbox|worker|fallback)-\w+\.js$/.test(pathname)) {
+        const filePath = join(__dirname, '.next', pathname)
+        app.serveStatic(req, res, filePath)
+      } else {
+        handle(req, res, parsedUrl)
+      }
     })
-  })
-  .catch((ex) => {
-    console.error(ex.stack)
-    process.exit(1)
+    .listen(port, () => {
+      console.log(`> Ready on http://localhost:${port}`)
+    })
   })
