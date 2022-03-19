@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
-import Footer from "../../../components/Footer";
-import Header from "../../../components/Header";
-import ProductDescription from "../../../components/ProductDescription";
-import ProductSection from "../../../components/ProductSection";
+import Footer from "../../../components/Layout/Footer";
+import Header from "../../../components/Layout/Header";
+import ProductDescription from "../../../components/Product/ProductDescription";
+import ProductSection from "../../../components/Product/ProductSection";
 
 const Product = () => {
   return (

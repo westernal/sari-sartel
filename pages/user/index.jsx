@@ -1,9 +1,9 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import Footer from "../../../components/Layout/Footer";
+import Header from "../../../components/Layout/Header";
 import Image from "next/dist/client/image";
 import Head from "next/head";
-import UserInfo from "../../components/UserInfo";
-import OrderList from "../../components/OrderList";
+import UserInfo from "../../components/User/UserInfo";
+import OrderList from "../../components/User/OrderList";
 
 const User = () => {
   return (

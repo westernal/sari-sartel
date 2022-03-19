@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import Home from "../components/Home.jsx";
-import Start from "../components/Start.jsx";
+import Home from "../components/Home/Home.jsx";
+import Start from "../components/Home/Start.jsx";
 
 export default function Index() {
   function sleep(ms) {

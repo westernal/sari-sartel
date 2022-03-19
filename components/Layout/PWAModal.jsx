@@ -28,7 +28,7 @@ const PWAModal = () => {
         <div className="modal-main">
           <div className="flex">
             <Image
-              src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
+              src="../../public/Images/logo-removebg-preview.png"
               alt="logo"
               id="sartel"
               width={70}
