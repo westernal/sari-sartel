@@ -18,10 +18,10 @@ const Login = () => {
         <div className="login-form">
           <div className="flex slogo">
             <Image
-              src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
-              alt="logo"
-              width={100}
-              height={70}
+              src="/Images/logo-removebg-preview.png"
+              alt="sari sartel's logo"
+              width={108}
+              height={40}
             />
           </div>
           <form action="#">

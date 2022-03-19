@@ -22,7 +22,7 @@ const Header = () => {
         <meta
           name="description"
           content="مرکز فروش و خدمات مجاز گوشی های همراه
-(iPhone, Huawei, Nokia, Samsung)"
+(شیائومی, هواوي, نوكيا, سامسونگ)"
         />
         <meta name="keywords" content="Keywords" />
       </Head>
@@ -41,10 +41,10 @@ const Header = () => {
           <Link href={"/"}>
             <a aria-label="home">
               <Image
-                src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
+                src="/Images/logo-removebg-preview.png"
                 alt="sari sartel's logo"
-                width={90}
-                height={60}
+                width={108}
+                height={40}
               />
             </a>
           </Link>

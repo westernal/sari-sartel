@@ -6,12 +6,12 @@ const Start = () => {
   return (
     <div className="start-page flex">
       <Image
-        src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
-        alt="logo"
-        width={100}
-        height={100}
+        src="/Images/logo-removebg-preview.png"
+        alt="sari sartel's logo"
+        width={108}
+        height={40}
       />
-      <Bars color="#212121" height={110} width={80} />
+      <Bars color="#212121" height={90} width={80} />
     </div>
   );
 };
