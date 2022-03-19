@@ -184,9 +184,6 @@ h1 {
   text-align: center;
 }
 
-.location {
-  margin-top: 100px;
-}
 
 .down-header {
   margin: 20px 10%;
@@ -330,6 +327,11 @@ select {
   width: 50px;
 }
 
+.modal-main button {
+  background-color: #212121 !important;
+  color: white !important;
+}
+
 .closebtn:hover {
   border-right: none !important;
 }
@@ -373,10 +375,9 @@ select {
 }
 
 .modal-content {
-  background-color: #212121;
-
+  background-color: white;
+  color: #212121;
   padding: 20px;
-  background: #212121;
 
   width: 100%; /* Could be more or less, depending on screen size */
 }
@@ -387,7 +388,6 @@ select {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  grid-gap: 50px;
 }
 
 .si1 {

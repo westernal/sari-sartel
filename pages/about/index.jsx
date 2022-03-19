@@ -20,14 +20,16 @@ const AboutUs = () => {
           <div className="about-info">
             <div className="flex">
               <Image
-                src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
+                src="/Images/imgonline-com-ua-ReplaceColor-NPlCJjd7GepfKE5-removebg-preview.png"
                 alt="logo"
-                id="logo"
-                width={80}
-                height={80}
+                width={100}
+                height={100}
               />
             </div>
-            <a href="https://goo.gl/maps/gau94booSoe9dDGB9" aria-label="location">
+            <a
+              href="https://goo.gl/maps/gau94booSoe9dDGB9"
+              aria-label="location"
+            >
               <div className="location flex">
                 <Image
                   src="/Images/icons8-location-50.png"
@@ -38,7 +40,11 @@ const AboutUs = () => {
                 <h4>ساری _خیابان شهابی _خیابان المهدی</h4>
               </div>
             </a>
-            <a href="tel:01133201111" className="flex" aria-label="telephone number">
+            <a
+              href="tel:01133201111"
+              className="flex"
+              aria-label="telephone number"
+            >
               <Image
                 src="/Images/icons8-ringer-volume-50.png"
                 alt="telephone"

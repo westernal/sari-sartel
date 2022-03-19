@@ -1,6 +1,6 @@
-import share1 from "../public/Images/Frame 85.svg";
-import share2 from "../public/Images/Frame 85 (1).svg";
-import share3 from "../public/Images/Frame 86.svg";
+import share1 from "../../public/Images/Frame 85.svg";
+import share2 from "../../public/Images/Frame 85 (1).svg";
+import share3 from "../../public/Images/Frame 86.svg";
 import { useEffect } from "react";
 import Image from "next/dist/client/image";
 
@@ -28,11 +28,11 @@ const PWAModal = () => {
         <div className="modal-main">
           <div className="flex">
             <Image
-              src="../../public/Images/logo-removebg-preview.png"
+              src="/Images/imgonline-com-ua-ReplaceColor-NPlCJjd7GepfKE5-removebg-preview.png"
               alt="logo"
               id="sartel"
-              width={70}
-              height={70}
+              width={140}
+              height={140}
             />
           </div>
 

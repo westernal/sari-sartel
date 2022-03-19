@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Footer from "../../../components/Layout/Footer";
-import Header from "../../../components/Layout/Header";
+import Footer from "../../components/Layout/Footer";
+import Header from "../../components/Layout/Header";
 import Head from "next/head";
 
 const Suggestions = () => {
@@ -16,10 +16,10 @@ const Suggestions = () => {
         <div className="login-form">
           <div className="flex slogo">
             <Image
-              src="/Images/WhatsApp Image 2022-03-01 at 1.40.45 PM.jpeg"
+              src="/Images/imgonline-com-ua-ReplaceColor-NPlCJjd7GepfKE5-removebg-preview.png"
               alt="logo"
-              width={70}
-              height={70}
+              width={100}
+              height={100}
             />
           </div>
           <form action="#">
