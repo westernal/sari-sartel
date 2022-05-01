@@ -5,4 +5,4 @@ a mobile and accessories shop website and pwa
 Frontend made using Next js
 
 # Backend
-Backend is currently on django rest framework but soon will be on node js
+Backend made with node js
