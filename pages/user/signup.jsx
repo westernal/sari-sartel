@@ -1,12 +1,52 @@
 import Link from "next/link";
-import Footer from "../../../components/Layout/Footer";
-import Header from "../../../components/Layout/Header";
+import Footer from "../../components/Layout/Footer";
+import Header from "../../components/Layout/Header/Index";
 import { GoogleLogin } from "react-google-login";
 import Image from "next/dist/client/image";
 import Head from "next/head";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   function googleSucceeded(res) {}
+
+  async function signUp(email, password) {
+    const option = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: username,
+        email: email,
+        password: password,
+      }),
+      redirect: "follow",
+    };
+
+    var result = await API(option, "api/users/signup");
+
+    if (result.status == 201) {
+      localStorage.setItem("token", result.data.token);
+      router.push("/");
+      toast.success("با موفقيت وارد شديد!");
+    }
+  }
+
+  function checkInputs(e) {
+    e.preventDefault();
+
+    const password = document.getElementById("password");
+    const repeatPassword = document.getElementById("repeat-password");
+    const email = document.getElementById("email");
+
+    if (email.value == "") {
+      toast.error("ایمیلی وارد نشد");
+    }
+
+    if (password.value < 6) {
+      toast.error("کلمه عبور باید حداقل 6 کاراکتر باشد");
+    } else if (password.value !== repeatPassword.value) {
+      toast.error("تکرار کلمه عبور با کلمه عبور یکی نیست");
+    } else logIn(email.value, password.value);
+  }
 
   return (
     <>
@@ -25,15 +65,24 @@ const SignUp = () => {
             />
           </div>
           <form action="#">
-            <input type="text" placeholder="ایمیل" />
-            <input type="password" placeholder="رمز عبور" />
-            <input type="password" placeholder="تکرار رمزعبور " />
+            <input type="text" placeholder="ایمیل" id="email" />
+            <input type="password" placeholder="رمز عبور" id="password" />
+            <input
+              type="password"
+              placeholder="تکرار رمزعبور "
+              id="repeat-password"
+            />
             <div className="flex">
-              <input type="submit" value="ثبت نام" id="submit-btn" />
+              <input
+                type="submit"
+                value="ثبت نام"
+                id="submit-btn"
+                onClick={checkInputs}
+              />
             </div>
           </form>
           <div className="flex">
-            <p>OR</p>
+            <p>یا</p>
           </div>
           <div className="flex g-btn">
             <GoogleLogin

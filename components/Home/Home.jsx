@@ -1,8 +1,7 @@
-import Head from "next/head"
-import { useEffect } from "react";
+import Head from "next/head";
 import About from "./About";
 import Footer from "../Layout/Footer";
-import Header from "../Layout/Header";
+import Header from "../Layout/Header/Index";
 import ProductSection from "../Product/ProductSection";
 
 const Home = () => {

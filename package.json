@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^6.2.8",
     "next": "12.1.0",
     "next-optimized-images": "^2.6.2",
     "next-pwa": "^5.4.6",
     "react": "17.0.2",
+    "react-burger-menu": "^3.0.6",
+    "react-content-loader": "^6.2.0",
     "react-dom": "17.0.2",
     "react-google-login": "^5.2.2",
     "react-loader-spinner": "^5.0.8",
-    "sharp": "^0.30.3"
+    "react-toastify": "^8.2.0",
+    "sharp": "^0.30.3",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "eslint": "8.10.0",

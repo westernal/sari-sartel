@@ -1,17 +1,15 @@
+import useSWR from "swr";
 
-export default async function API (options,address)  {
+export default async function API(options, address) {
+  const host = "https://api.sari-sartel.com/";
 
-    const host = "https://rest.amdeveloper.xyz/";
+  const response = await fetch(host + address, options);
 
-    const response = await fetch(host + address, options);
-    
-    const data = await response.json();
+  const data = await response.json();
 
-    const status = response.status;
+  const status = response.status;
 
-    var ret = {status,data};
-    
-    return ret;
-   
+  var ret = { status, data };
+
+  return ret;
 }
- 

@@ -39,7 +39,7 @@ const About = () => {
           <button id="app-btn" onClick={openModal}>
             دانلود اپ
           </button>
-          <a href="https://goo.gl/maps/gau94booSoe9dDGB9">
+          <a href="https://goo.gl/maps/gau94booSoe9dDGB9" aria-label="map">
             <div className="location flex">
               <Image
                 src="/Images/icons8-location-50.png"

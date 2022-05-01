@@ -1,12 +1,51 @@
 import Link from "next/link";
-import Footer from "../../../components/Layout/Footer";
-import Header from "../../../components/Layout/Header";
+import Footer from "../../components/Layout/Footer";
+import Header from "../../components/Layout/Header/Index";
 import { GoogleLogin } from "react-google-login";
 import Image from "next/dist/client/image";
 import Head from "next/head";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router = useRouter();
   function googleSucceeded(res) {}
+
+  async function logIn(email, password) {
+    const option = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: username,
+        email: email,
+        password: password,
+      }),
+      redirect: "follow",
+    };
+
+    var result = await API(option, "api/users/signup");
+
+    if (result.status == 201) {
+      localStorage.setItem("token", result.data.token);
+      router.push("/");
+      toast.success("با موفقيت وارد شديد!");
+    }
+  }
+
+  function checkInputs(e) {
+    e.preventDefault();
+
+    const password = document.getElementById("password");
+    const email = document.getElementById("email");
+
+    if (email.value == "") {
+      toast.error("ایمیلی وارد نشد");
+    }
+
+    if (password.value < 6) {
+      toast.error("کلمه عبور اشتباه است");
+    } else logIn(email.value, password.value);
+  }
 
   return (
     <>
@@ -25,10 +64,15 @@ const Login = () => {
             />
           </div>
           <form action="#">
-            <input type="text" placeholder="ایمیل" />
-            <input type="password" placeholder="رمز عبور" />
+            <input type="text" placeholder="ایمیل" id="email" />
+            <input type="password" placeholder="رمز عبور" id="password" />
             <div className="flex">
-              <input type="submit" value="ورود" id="submit-btn" />
+              <input
+                type="submit"
+                value="ورود"
+                id="submit-btn"
+                onClick={checkInputs}
+              />
             </div>
           </form>
           <div className="flex">
@@ -46,7 +90,7 @@ const Login = () => {
             <p>اکانت ندارید؟ </p>
             <Link href="/user/signup">
               <a aria-label="sign up">ثبت نام</a>
-            </Link>{" "}
+            </Link>
           </div>
         </div>
       </div>

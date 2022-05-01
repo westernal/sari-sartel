@@ -50,6 +50,7 @@ textarea:focus {
   padding-right: 10px;
   width: 30vw;
   margin-right: 20px;
+  height: 40px;
 }
 
 .upper-header button,
@@ -104,6 +105,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .about {
@@ -177,13 +179,12 @@ textarea {
 
 h1 {
   font-family: robotoBold;
-  text-shadow: 0 13.36px 8.896px #212121, 0 -2px 1px #fff;
+  text-shadow: 0 13.36px 16.896px #212121, 0 -2px 1px #fff;
 }
 
 .about-description {
   text-align: center;
 }
-
 
 .down-header {
   margin: 20px 10%;
@@ -403,12 +404,13 @@ select {
 .modal-main2 button,
 .modal-main button,
 .buy-btn button,
+.add-form button,
 .about-section button,
 .admin-panel button {
   width: 100%;
   height: 48px;
   background: white;
-  box-shadow: 0px 15px 20px rgb(240 56 97 / 12%);
+  box-shadow: 0px 15px 55px #212121;
   border-radius: 10px;
   color: #212121;
   font-family: roboto;
@@ -446,12 +448,14 @@ select {
   color: white;
 }
 
-.buy-btn button {
+.buy-btn button,
+.add-form button {
   color: white;
   background-color: green;
 }
 
-.buy-btn button:hover {
+.buy-btn button:hover,
+.add-form button:hover {
   background-color: #212121;
 }
 
@@ -486,6 +490,7 @@ textarea {
   border: 0.5px solid #212121;
   font-family: roboto;
   width: 20vw;
+  border-radius: 5px;
 }
 
 input {
@@ -535,9 +540,14 @@ input {
 
 .product-image {
   border-radius: 20px;
-  box-shadow: 0px 15px 20px rgb(240 56 97 / 12%);
+  box-shadow: 0px 15px 55px #212121;
   height: fit-content;
   max-height: 300px;
+}
+
+.order-info .user-info {
+  display: block;
+  padding: 0 10vw;
 }
 
 .product-image img {
@@ -556,7 +566,7 @@ input {
 .product-text {
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0px 15px 20px rgb(240 56 97 / 12%);
+  box-shadow: 0px 15px 55px #212121;
 }
 
 .product-text h1 {
@@ -623,7 +633,7 @@ input {
   background-color: #212121;
   border-radius: 0 0 20px 20px;
   color: white;
-  box-shadow: 0px 15px 20px rgb(240 56 97 / 12%);
+  box-shadow: 0px 15px 55px #212121;
 }
 
 .about-section {
@@ -717,7 +727,8 @@ input {
   display: inline-block;
 }
 
-.dropdown-content,.dropdown-content2 {
+.dropdown-content,
+.dropdown-content2 {
   display: none;
   background-color: #212121;
   border-radius: 0 0 20px 0;
@@ -735,22 +746,23 @@ input {
   border-left: 0.5px solid #ededed;
 }
 
-
 .dropdown-content2 {
-  border-radius: 0 ;
+  border-radius: 0;
 }
 
-.dropdown-content a, .dropdown-content2 a {
+.dropdown-content a,
+.dropdown-content2 a {
   padding: 10px;
   transition: 0.5s;
   border-radius: 0 0 20px 0;
 }
 
 .dropdown-content2 a {
-  border-radius: 0 ;
+  border-radius: 0;
 }
 
-.dropdown-content a:hover, .dropdown-content2 a:hover {
+.dropdown-content a:hover,
+.dropdown-content2 a:hover {
   background-color: black;
 }
 
@@ -771,6 +783,44 @@ input {
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.add-form {
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw;
+  gap: 40px;
+}
+
+.add-form label {
+  margin-left: 20px;
+}
+
+.add-form input,
+.add-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: roboto;
+  border: 1px solid #212121;
+}
+
+.add-form button {
+  width: 100%;
+}
+
+.item-colors {
+  margin-bottom: 20px;
+}
+
+.color {
+  border: 0.5px solid #ededed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 @media only screen and (max-width: 950px) {
@@ -842,7 +892,8 @@ input {
     grid-template-columns: 40vw 40vw;
   }
 
-  .login-form input, .login-form textarea {
+  .login-form input,
+  .login-form textarea {
     width: 70vw;
   }
 
