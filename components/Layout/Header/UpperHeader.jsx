@@ -3,13 +3,17 @@ import BurgerMenu from "../BurgerMenu";
 import Image from "next/dist/client/image";
 import { useState } from "react";
 import { useEffect } from "react";
+import jwt_decode from "jwt-decode";
 
 const UpperHeader = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, SetEmail] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLoggedIn(true);
+      console.log(jwt_decode(localStorage.getItem("token")));
+      SetEmail(jwt_decode(localStorage.getItem("token")).email);
     }
   }, []);
 
@@ -27,6 +31,13 @@ const UpperHeader = () => {
           <Link href="/user/login">
             <a aria-label="login">
               <button>ورود</button>
+            </a>
+          </Link>
+        )}
+        {isLoggedIn && (
+          <Link href="/user">
+            <a aria-label="login">
+              <button>ناحیه کاربری</button>
             </a>
           </Link>
         )}

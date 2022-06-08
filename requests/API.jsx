@@ -1,5 +1,3 @@
-import useSWR from "swr";
-
 export default async function API(options, address) {
   const host = "https://api.sari-sartel.com/";
 
@@ -10,6 +8,7 @@ export default async function API(options, address) {
   const status = response.status;
 
   var ret = { status, data };
+  console.log(ret);
 
   return ret;
 }

@@ -5,11 +5,12 @@ import { GoogleLogin } from "react-google-login";
 import Image from "next/dist/client/image";
 import Head from "next/head";
 import { toast } from "react-toastify";
+import API from "../../requests/API";
 
 const SignUp = () => {
   function googleSucceeded(res) {}
 
-  async function signUp(email, password) {
+  async function signUp(username, email, password) {
     const option = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -21,12 +22,14 @@ const SignUp = () => {
       redirect: "follow",
     };
 
-    var result = await API(option, "api/users/signup");
+    var result = await API(option, "api/user/signup");
 
-    if (result.status == 201) {
+    if (result.status == 200) {
       localStorage.setItem("token", result.data.token);
       router.push("/");
       toast.success("با موفقيت وارد شديد!");
+    } else {
+      toast.error(`${result.data.message}`);
     }
   }
 
@@ -34,6 +37,7 @@ const SignUp = () => {
     e.preventDefault();
 
     const password = document.getElementById("password");
+    const username = document.getElementById("username");
     const repeatPassword = document.getElementById("repeat-password");
     const email = document.getElementById("email");
 
@@ -41,11 +45,15 @@ const SignUp = () => {
       toast.error("ایمیلی وارد نشد");
     }
 
+    if (username.value == "") {
+      toast.error("ایمیلی وارد نشد");
+    }
+
     if (password.value < 6) {
       toast.error("کلمه عبور باید حداقل 6 کاراکتر باشد");
     } else if (password.value !== repeatPassword.value) {
       toast.error("تکرار کلمه عبور با کلمه عبور یکی نیست");
-    } else logIn(email.value, password.value);
+    } else signUp(username.value, email.value, password.value);
   }
 
   return (
@@ -65,6 +73,7 @@ const SignUp = () => {
             />
           </div>
           <form action="#">
+            <input type="text" placeholder="نام کاربری" id="username" />
             <input type="text" placeholder="ایمیل" id="email" />
             <input type="password" placeholder="رمز عبور" id="password" />
             <input

@@ -6,6 +6,7 @@ import Image from "next/dist/client/image";
 import Head from "next/head";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import API from "../../requests/API";
 
 const Login = () => {
   const router = useRouter();
@@ -16,19 +17,20 @@ const Login = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        username: username,
         email: email,
         password: password,
       }),
       redirect: "follow",
     };
 
-    var result = await API(option, "api/users/signup");
+    var result = await API(option, "api/user/login");
 
-    if (result.status == 201) {
+    if (result.status == 200) {
       localStorage.setItem("token", result.data.token);
       router.push("/");
       toast.success("با موفقيت وارد شديد!");
+    } else {
+      toast.error(`${result.data.message}`);
     }
   }
 
