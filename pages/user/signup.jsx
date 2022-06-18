@@ -6,8 +6,12 @@ import Image from "next/dist/client/image";
 import Head from "next/head";
 import { toast } from "react-toastify";
 import API from "../../requests/API";
+import { Bars } from "react-loader-spinner";
+import { useState } from "react";
 
 const SignUp = () => {
+  const [loader, SetLoader] = useState(false);
+
   function googleSucceeded(res) {}
 
   async function signUp(username, email, password) {
@@ -25,15 +29,18 @@ const SignUp = () => {
     var result = await API(option, "api/user/signup");
 
     if (result.status == 200) {
+      SetLoader(false);
       localStorage.setItem("token", result.data.token);
       router.push("/");
       toast.success("با موفقيت وارد شديد!");
     } else {
       toast.error(`${result.data.message}`);
+      SetLoader(false);
     }
   }
 
   function checkInputs(e) {
+    SetLoader(true);
     e.preventDefault();
 
     const password = document.getElementById("password");
@@ -72,6 +79,12 @@ const SignUp = () => {
               height={40}
             />
           </div>
+          {loader && (
+            <div className="flex loader">
+              {" "}
+              <Bars color="#212121" height={30} width={30} />
+            </div>
+          )}
           <form action="#">
             <input type="text" placeholder="نام کاربری" id="username" />
             <input type="text" placeholder="ایمیل" id="email" />

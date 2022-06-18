@@ -21,7 +21,12 @@ const AddProduct = () => {
           <label htmlFor="image">عکس محصول:</label>
           <input type="file" id="image" name="image" accept="image/*" />
         </div>
-        <input type="text" placeholder="تیتر محصول..." id="title" />
+        <input type="text" placeholder="نام محصول..." id="title" />
+        <select>
+          <option value="" disabled selected>
+            دسته بندی محصول
+          </option>
+        </select>
         <textarea placeholder="متن محصول..." id="description" />
         <button>پست</button>
       </div>

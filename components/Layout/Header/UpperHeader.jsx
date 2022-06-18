@@ -35,7 +35,7 @@ const UpperHeader = () => {
           </Link>
         )}
         {isLoggedIn && (
-          <Link href="/user">
+          <Link href="/user/admin">
             <a aria-label="login">
               <button>ناحیه کاربری</button>
             </a>

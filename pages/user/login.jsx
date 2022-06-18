@@ -7,9 +7,14 @@ import Head from "next/head";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import API from "../../requests/API";
+import { Bars } from "react-loader-spinner";
+import { useState } from "react";
 
 const Login = () => {
   const router = useRouter();
+
+  const [loader, SetLoader] = useState(false);
+
   function googleSucceeded(res) {}
 
   async function logIn(email, password) {
@@ -27,14 +32,17 @@ const Login = () => {
 
     if (result.status == 200) {
       localStorage.setItem("token", result.data.token);
+      SetLoader(false);
       router.push("/");
       toast.success("با موفقيت وارد شديد!");
     } else {
       toast.error(`${result.data.message}`);
+      SetLoader(false);
     }
   }
 
   function checkInputs(e) {
+    SetLoader(true);
     e.preventDefault();
 
     const password = document.getElementById("password");
@@ -65,6 +73,12 @@ const Login = () => {
               height={40}
             />
           </div>
+          {loader && (
+            <div className="flex loader">
+              {" "}
+              <Bars color="#212121" height={30} width={30} />
+            </div>
+          )}
           <form action="#">
             <input type="text" placeholder="ایمیل" id="email" />
             <input type="password" placeholder="رمز عبور" id="password" />
