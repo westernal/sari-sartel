@@ -12,7 +12,6 @@ const UpperHeader = () => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLoggedIn(true);
-      console.log(jwt_decode(localStorage.getItem("token")));
       SetEmail(jwt_decode(localStorage.getItem("token")).email);
     }
   }, []);

@@ -1,5 +1,5 @@
 import Footer from "../../components/Layout/Footer";
-import Header from "../../components/Layout/Header";
+import Header from "../../components/Layout/Header/Header";
 import Head from "next/head";
 import UserInfo from "../../components/User/UserInfo";
 import OrderList from "../../components/User/OrderList";
@@ -18,7 +18,7 @@ const User = () => {
       <OrderList />
 
       <Footer />
-      </div>
+    </div>
   );
 };
 

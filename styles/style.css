@@ -827,6 +827,16 @@ input {
   border-radius: 50%;
 }
 
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+
+.delete-btn svg path {
+  fill: red;
+}
+
 @media only screen and (max-width: 950px) {
   .items-list {
     grid-template-columns: 25vw 25vw 25vw;

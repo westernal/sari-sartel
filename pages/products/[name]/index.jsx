@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Footer from "../../../components/Layout/Footer";
-import Header from "../../../components/Layout/Header";
+import Header from "../../../components/Layout/Header/Header";
 import ItemList from "../../../components/Product/ItemList";
 import Head from "next/head";
 

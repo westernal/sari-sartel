@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Footer from "../../../components/Layout/Footer";
-import Header from "../../../components/Layout/Header";
+import Header from "../../../components/Layout/Header/Header";
 
 const OrderInfo = () => {
   return (

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import About from "./About";
 import Footer from "../Layout/Footer";
-import Header from "../Layout/Header/Index";
+import Header from "../Layout/Header/Header";
 import ProductSection from "../Product/ProductSection";
 
 const Home = () => {

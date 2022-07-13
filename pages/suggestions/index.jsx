@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Footer from "../../components/Layout/Footer";
-import Header from "../../components/Layout/Header";
+import Header from "../../components/Layout/Header/Header";
 import Head from "next/head";
 
 const Suggestions = () => {
@@ -32,7 +32,10 @@ const Suggestions = () => {
             <p> یا</p>
           </div>
           <div className="socials flex">
-            <a href="https://www.instagram.com/sarisartel2/" aria-label="instagram page">
+            <a
+              href="https://www.instagram.com/sarisartel2/"
+              aria-label="instagram page"
+            >
               <Image
                 src="/Images/icons8-instagram-30.png"
                 alt="instagram logo"
@@ -43,7 +46,7 @@ const Suggestions = () => {
             <a href="tel:01133201111" aria-label="call number">
               <Image
                 src="/Images/icons8-ringer-volume-50.png"
-                alt="telephone" 
+                alt="telephone"
                 id="telephone"
                 width={30}
                 height={30}

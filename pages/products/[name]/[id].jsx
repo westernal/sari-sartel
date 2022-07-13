@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
 import Footer from "../../../components/Layout/Footer";
-import Header from "../../../components/Layout/Header";
+import Header from "../../../components/Layout/Header/Header";
 import ProductDescription from "../../../components/Product/ProductDescription";
 import ProductSection from "../../../components/Product/ProductSection";
 

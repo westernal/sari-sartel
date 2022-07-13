@@ -1,4 +1,4 @@
-import Header from "../../components/Layout/Header";
+import Header from "../../components/Layout/Header/Header";
 import Footer from "../../components/Layout/Footer";
 import Image from "next/dist/client/image";
 import Head from "next/head";
