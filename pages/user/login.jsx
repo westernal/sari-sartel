@@ -28,7 +28,11 @@ const Login = () => {
       redirect: "follow",
     };
 
-    var result = await API(option, "api/user/login");
+    try {
+      var result = await API(option, "api/user/login");
+    } catch (error) {
+      toast.error("خطای سرور!");
+    }
 
     if (result.status == 200) {
       localStorage.setItem("token", result.data.token);

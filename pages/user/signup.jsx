@@ -26,7 +26,11 @@ const SignUp = () => {
       redirect: "follow",
     };
 
-    var result = await API(option, "api/user/signup");
+    try {
+      var result = await API(option, "api/user/signup");
+    } catch (error) {
+      toast.error("خطای سرور!");
+    }
 
     if (result.status == 200) {
       SetLoader(false);
