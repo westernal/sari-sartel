@@ -64,7 +64,7 @@ const SignUp = () => {
       toast.error("کلمه عبور باید حداقل 6 کاراکتر باشد");
     } else if (password.value !== repeatPassword.value) {
       toast.error("تکرار کلمه عبور با کلمه عبور یکی نیست");
-    } else signUp(username.value, email.value, password.value);
+    } else signUp(username.value.toLowerCase(), email.value, password.value);
   }
 
   return (
