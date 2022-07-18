@@ -1,7 +1,30 @@
 import Link from "next/link";
 import Image from "next/dist/client/image";
+import { useEffect, useState } from "react";
+import API from "../../../requests/API";
 
 const DownHeader = () => {
+  const [categories, SetCategories] = useState([]);
+
+  useEffect(() => {
+    async function getCategories() {
+      const option = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+      };
+
+      var result = await API(option, `api/product/getCategories`);
+
+      if (result.status == 200) {
+        SetCategories(result.data);
+      }
+    }
+
+    getCategories();
+  }, []);
   return (
     <div className="down-header">
       <Link href={`/`}>
@@ -27,18 +50,11 @@ const DownHeader = () => {
         </Link>
         <div className="dropdown">
           <div className="dropdown-content">
-            <Link href={"/products/تلفن همراه"}>
-              <a aria-label="cell phones">تلفن همراه</a>
-            </Link>
-            <Link href={"/products/تبلت"}>
-              <a aria-label="tablet">تبلت</a>
-            </Link>
-            <Link href={"/products/ساعت هوشمند"}>
-              <a aria-label="smart watches">ساعت هوشمند</a>
-            </Link>
-            <Link href={"/products/لوازم جانبی"}>
-              <a aria-label="accessories">لوازم جانبی</a>
-            </Link>
+            {categories.map((cat) => (
+              <Link href={`/products/${cat.name}`} key={cat._id}>
+                <a aria-label="cell phones">{cat.name}</a>
+              </Link>
+            ))}
           </div>
           <div className="dropdown-content2">
             <Link href={"/products/اپل"}>

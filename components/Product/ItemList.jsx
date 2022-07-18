@@ -31,7 +31,7 @@ const ItemList = () => {
   return (
     <div className="items-list reveal">
       {items.map((item, index) => (
-        <div className="item">
+        <div className="item" key={index}>
           {loader ? (
             <ContentLoader
               speed={2}
