@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Footer from "../../components/Layout/Footer";
-import Header from "../../components/Layout/Header/Index";
+import Header from "../../components/Layout/Header/Header";
 import { GoogleLogin } from "react-google-login";
 import Image from "next/dist/client/image";
 import Head from "next/head";
